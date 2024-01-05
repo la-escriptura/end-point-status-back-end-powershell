@@ -74,7 +74,7 @@ $HttpStatus = {
 		$level
 	 )
 <# Created by  : Aguilar, Christopher B.
- # E-mail Add  : Christopher.Aguilar@globalpay.com
+ # E-mail Add  : 
  # Date        : 
  # Description : 
  #>
@@ -105,10 +105,10 @@ Add-Type @"
 [System.Net.ServicePointManager]::SecurityProtocol = [Enum]::ToObject([System.Net.SecurityProtocolType], 3072) -bor [Enum]::ToObject([System.Net.SecurityProtocolType], 768) -bor [Enum]::ToObject([System.Net.SecurityProtocolType], 192) -bor [Enum]::ToObject([System.Net.SecurityProtocolType], 0) -bor [Enum]::ToObject([System.Net.SecurityProtocolType], 48); 
 
 <# Created by  : Aguilar, Christopher B.
-	# E-mail Add  : Christopher.Aguilar@globalpay.com
-	# Date        : 2021-03-11
-	# Description : 
-	#>
+ # E-mail Add  : 
+ # Date        : 
+ # Description : 
+ #>
 function Get-ICMPStatus {
 	[CmdletBinding()]
 	Param (
@@ -131,8 +131,8 @@ function Get-ICMPStatus {
 }
 
 <# Created by  : Aguilar, Christopher B.
- # E-mail Add  : Christopher.Aguilar@globalpay.com
- # Date        : 2020-06-09
+ # E-mail Add  : 
+ # Date        : 
  # Description : 
  #>
 function Testnet {
@@ -151,8 +151,8 @@ function Testnet {
 }
 
 <# Created by  : Aguilar, Christopher B.
- # E-mail Add  : Christopher.Aguilar@globalpay.com
- # Date        : 2021-03-11
+ # E-mail Add  : 
+ # Date        : 
  # Description : 
  #>
 function Get-HttpStatus {
