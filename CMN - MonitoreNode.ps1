@@ -199,11 +199,11 @@ return Get-HttpStatus -protocol $protocol -domain $domain -port $port -path $pat
 } #$HttpStatus
 	Join-Path -Path $env:PS_MODULE -ChildPath "CommonModules.psm1" | Import-Module -Force
     if ($IsTlsEncryted) { $protocol = "https" } else { $protocol = "http" }
-    $statusJump = $(Invoke-Command -ScriptBlock $HttpStatus -ArgumentList $protocol, $Domain, $Port, $Path, $MonitoringLevel -ComputerName "g1nwgcejmp002.gpn.globalpay.com" -Credential $jumpCreds)
+    $statusJump = $(Invoke-Command -ScriptBlock $HttpStatus -ArgumentList $protocol, $Domain, $Port, $Path, $MonitoringLevel -ComputerName "server1" -Credential $jumpCreds)
 	If ($($statusJump.Keys) -lt 0) { 
 		$statusProd = Get-HttpStatus -protocol $protocol -domain $Domain -port $Port -path $Path -level $MonitoringLevel 
 		If ($($statusProd.Keys) -lt 0) {
-			$statusTool = $(Invoke-Command -ScriptBlock $HttpStatus -ArgumentList $protocol, $Domain, $Port, $Path, $MonitoringLevel -ComputerName "g1nwgtlsw001.gpn.globalpay.com" -Credential $jumpCreds)
+			$statusTool = $(Invoke-Command -ScriptBlock $HttpStatus -ArgumentList $protocol, $Domain, $Port, $Path, $MonitoringLevel -ComputerName "server2" -Credential $jumpCreds)
 			If ($($statusTool.Keys) -lt 0) { 
 				if ($($statusJump.Keys) -lt $($statusProd.Keys)) {
 					if ($($statusJump.Keys) -lt $($statusTool.Keys)) {
